@@ -5,15 +5,24 @@
   
 
   
-  <title>楚河</title>
+  <title>DVWA（一）密码爆破登录 | 楚河</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="楚河">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="工具： Burpsuite wireshark Hydra 分析首页登录过程 首页的登录界面是一个标准的表单提交过程，提交的方法是 POST。但是分析网页结构可以发现，它包含一个隐藏的 input元素，如下图所示。  发起点击行为随便输入用户密码后，点击提交。主要的交互过程如下： 123456789Request（POST）：    Login	Login    password	test">
+<meta name="keywords" content="安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DVWA（一）密码爆破登录">
+<meta property="og:url" content="http://yoursite.com/2019/06/24/DVWA（一）密码爆破登录/index.html">
 <meta property="og:site_name" content="楚河">
+<meta property="og:description" content="工具： Burpsuite wireshark Hydra 分析首页登录过程 首页的登录界面是一个标准的表单提交过程，提交的方法是 POST。但是分析网页结构可以发现，它包含一个隐藏的 input元素，如下图所示。  发起点击行为随便输入用户密码后，点击提交。主要的交互过程如下： 123456789Request（POST）：    Login	Login    password	test">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/06/24/DVWA（一）密码爆破登录/assets/1553608887062.png">
+<meta property="og:image" content="http://yoursite.com/home/john/Documents/web/assets/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B.md">
+<meta property="og:image" content="http://yoursite.com/2019/06/24/DVWA（一）密码爆破登录/assets/1553782149835.png">
+<meta property="og:updated_time" content="2019-07-27T08:51:54.183Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="楚河">
+<meta name="twitter:title" content="DVWA（一）密码爆破登录">
+<meta name="twitter:description" content="工具： Burpsuite wireshark Hydra 分析首页登录过程 首页的登录界面是一个标准的表单提交过程，提交的方法是 POST。但是分析网页结构可以发现，它包含一个隐藏的 input元素，如下图所示。  发起点击行为随便输入用户密码后，点击提交。主要的交互过程如下： 123456789Request（POST）：    Login	Login    password	test">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/24/DVWA（一）密码爆破登录/assets/1553608887062.png">
   
     <link rel="alternate" href="/atom.xml" title="楚河" type="application/atom+xml">
   
@@ -60,121 +69,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-http简介" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/27/http简介/" class="article-date">
-  <time datetime="2019-07-27T08:45:57.000Z" itemprop="datePublished">2019-07-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/27/http简介/">http简介</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这是一系列文章的开始，工作了这么久，发现很多人对http和web有不少的误解。当大家都在追求web交互的更快，使用webGL来充实内容，使用各类hybrid框架来实现一统所有平台的意愿，却很少有人去深刻理解http的诞生、成长。</p>
-<p>从90年代开始，http作为web的附庸而逐渐成长，这么多年过去了，http的应用领域已经不仅仅局限在web，各种http的变体充斥在各个角落，在这个技术快速迭代的年代，就越需要理解技术的本质。每个技术从业者应该多问以下问题：</p>
-<ul>
-<li>我用的技术会死去吗</li>
-<li>更好的技术是什么</li>
-</ul>
-<p>放在web领域，也应该问下自己：</p>
-<ul>
-<li>web和http会死去吗</li>
-<li>他们的替代品将是什么</li>
-</ul>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在1999年的<a href="https://tools.ietf.org/html/rfc2616" target="_blank" rel="noopener">RFC 2616</a>是这样描述http的设计目的：</p>
-<blockquote>
-<p> HTTP has been in use by the World-Wide Web global information initiative since 1990.</p>
-</blockquote>
-<p>http从诞生之初，就已经与万维网有不可割舍的血缘关系。因为当时万维网的特性，形成了我们耳熟能详的特性</p>
-<ul>
-<li>请求简单</li>
-<li>传输数据灵活</li>
-<li>无连接</li>
-<li>无状态</li>
-</ul>
-<p>近二十年来，HTTP/1.1标准的内涵不挺的外延，甚至需要6个RFC来描述整个HTTP协议，他们是：</p>
-<ul>
-<li><p>消息-“Message Syntax and Routing” (RFC 7230)</p>
-<ul>
-<li><p>语义-“Semantics and Content” [RFC7231]</p>
-</li>
-<li><p>条件请求-“Conditional Requests” [RFC7232]</p>
-</li>
-<li><p>范围请求-“Range Requests” [RFC7233]</p>
-</li>
-<li><p>缓存-“Caching” [RFC7234]</p>
-</li>
-<li><p>认证-“Authentication” [RFC7235]</p>
-</li>
-</ul>
-</li>
-</ul>
-<p>虽然当前来说，<code>http 2.0</code>已经蓬勃兴起， google的<code>QUIC</code>（笑称http 3.0)也在实验阶段，他们可能在安全、传输等方面有较大的优化，但是他们并没有给http赋予新的内涵：</p>
-<blockquote>
-<p>HTTP is a generic interface protocol for information systems.  It is designed to hide the details of how a service is implemented by presenting a uniform interface to clients that is independent of the types of resources provided. <a href="https://tools.ietf.org/html/rfc7230" target="_blank" rel="noopener">RFC7230</a></p>
-</blockquote>
-<p>HTTP是一种通用的信息传递协议。对http来讲，Web世界将只是很少的一部分。</p>
-<h2 id="从RFC7230开始"><a href="#从RFC7230开始" class="headerlink" title="从RFC7230开始"></a>从RFC7230开始</h2><p>先从几个问题开始：</p>
-<ol>
-<li><p>什么决定了服务端和客户端</p>
-</li>
-<li><p>为什么必须要使用空行隔开<code>header</code>和<code>body</code></p>
-</li>
-<li><p>URI是什么？</p>
-</li>
-</ol>
-<p>实际上，这篇RFC解决了七十多个问题，每一个问题都可以写一篇较长的文章来讲，这里分析一下这三个问题：</p>
-<h3 id="message格式决定服务端和客户端"><a href="#message格式决定服务端和客户端" class="headerlink" title="message格式决定服务端和客户端"></a>message格式决定服务端和客户端</h3><p>标准规定，如果<code>端</code>发出的是 <code>response</code>格式的消息，那么就属于<code>server</code>，反之，就是<code>client</code>。</p>
-<p>事实上，完全可以由tcp特性来决定服务端还是客户端问题。但是标准如此规定，就是因为http标准并不依赖TCP来实现。</p>
-<p>比较常见的是<code>google</code>使用的<code>QUIC</code>就是基于<code>UDP</code>实现的HTTP标准（有一定差异）。当然，也可以使用其它的协议来实现一个<code>http</code>协议。这类需求一般见于工业界，也可以用于物联网。</p>
-<p>因此，思考HTTP的时候，希望可以脱离那句话来想象：</p>
-<p><code>HTTP是基于TCP的应用层协议</code></p>
-<h4 id="自定义消息头"><a href="#自定义消息头" class="headerlink" title="自定义消息头"></a>自定义消息头</h4><p>常见的请求如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GET / HTTP/1.0</span><br><span class="line">User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5)</span><br><span class="line">Accept: */*</span><br><span class="line"></span><br><span class="line">body</span><br></pre></td></tr></table></figure>
-
-<p>常见回复如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.0 200 OK</span><br><span class="line">Content-Type: text/plain</span><br><span class="line">Content-Length: 137582</span><br><span class="line">Expires: Thu, 05 Dec 1997 16:00:00 GMT</span><br><span class="line">Last-Modified: Wed, 5 August 1996 15:55:28 GMT</span><br><span class="line">Server: Apache 0.84</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;body&gt;Hello World&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>header</code>和<code>body</code>中间存在一个<code>empty line</code>。这是因为，标准允许服务端或者客户端自定义消息头，为了区分<code>header</code>和<code>body</code>，标准通过设置空行来进行区分。在某些需求下，你可以将内容写在<code>header</code>区域，防止<code>body</code>内内容被防火墙或者杀毒软件干掉。</p>
-<p>为什么不设置固定的<code>header</code>或者<code>body</code>？</p>
-<p>http在设计之初，就用于传输各种<code>多媒体信息</code>，因此从一开始，<code>header</code>和<code>body</code>的内容就没办法进行固定。从目前来看，HTTP承载最多的也是各种信息资源的传递。所以，在这个角度：</p>
-<p><code>http传输某种资源不会是最优的方案，但是一定可以传输任意资源</code></p>
-<h3 id="HTTP灵魂：-资源定位"><a href="#HTTP灵魂：-资源定位" class="headerlink" title="HTTP灵魂： 资源定位"></a>HTTP灵魂： 资源定位</h3><p>HTTP发明者<code>Tim Berners-Lee</code>有句名言：</p>
-<blockquote>
-<p> Web users ultimately want to get at data quickly and easily. They don’t care as much about attractive sites and pretty design.</p>
-</blockquote>
-<p>对于创始人来说：更快的获取数据是web的唯一使命。</p>
-<p>使用URI来描述资源，就是能够简化获取资源的步骤。</p>
-<p>那么，URI的结构是什么？URI将永远不变吗？</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/27/http简介/" data-id="cjylayofn0003ubsaao8lbacj" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-DVWA（一）密码爆破登录" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-DVWA（一）密码爆破登录" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/24/DVWA（一）密码爆破登录/" class="article-date">
   <time datetime="2019-06-24T04:00:00.000Z" itemprop="datePublished">2019-06-24</time>
@@ -187,8 +82,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/24/DVWA（一）密码爆破登录/">DVWA（一）密码爆破登录</a>
+    <h1 class="article-title" itemprop="name">
+      DVWA（一）密码爆破登录
     </h1>
   
 
@@ -230,11 +125,23 @@
     </footer>
   </div>
   
-</article>
-
+    
+<nav id="article-nav">
+  
+    <a href="/2019/07/27/http简介/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          http简介
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
   
-
+</article>
 
 </section>
         

@@ -5,15 +5,19 @@
   
 
   
-  <title>楚河</title>
+  <title>http简介 | 楚河</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="楚河">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="这是一系列文章的开始，工作了这么久，发现很多人对http和web有不少的误解。当大家都在追求web交互的更快，使用webGL来充实内容，使用各类hybrid框架来实现一统所有平台的意愿，却很少有人去深刻理解http的诞生、成长。 从90年代开始，http作为web的附庸而逐渐成长，这么多年过去了，http的应用领域已经不仅仅局限在web，各种http的变体充斥在各个角落，在这个技术快速迭代的年代，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="http简介">
+<meta property="og:url" content="http://yoursite.com/2019/07/27/http简介/index.html">
 <meta property="og:site_name" content="楚河">
+<meta property="og:description" content="这是一系列文章的开始，工作了这么久，发现很多人对http和web有不少的误解。当大家都在追求web交互的更快，使用webGL来充实内容，使用各类hybrid框架来实现一统所有平台的意愿，却很少有人去深刻理解http的诞生、成长。 从90年代开始，http作为web的附庸而逐渐成长，这么多年过去了，http的应用领域已经不仅仅局限在web，各种http的变体充斥在各个角落，在这个技术快速迭代的年代，">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-27T08:46:39.843Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="楚河">
+<meta name="twitter:title" content="http简介">
+<meta name="twitter:description" content="这是一系列文章的开始，工作了这么久，发现很多人对http和web有不少的误解。当大家都在追求web交互的更快，使用webGL来充实内容，使用各类hybrid框架来实现一统所有平台的意愿，却很少有人去深刻理解http的诞生、成长。 从90年代开始，http作为web的附庸而逐渐成长，这么多年过去了，http的应用领域已经不仅仅局限在web，各种http的变体充斥在各个角落，在这个技术快速迭代的年代，">
   
     <link rel="alternate" href="/atom.xml" title="楚河" type="application/atom+xml">
   
@@ -60,9 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-http简介" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-http简介" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/07/27/http简介/" class="article-date">
   <time datetime="2019-07-27T08:45:57.000Z" itemprop="datePublished">2019-07-27</time>
@@ -75,8 +77,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/27/http简介/">http简介</a>
+    <h1 class="article-title" itemprop="name">
+      http简介
     </h1>
   
 
@@ -170,71 +172,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-DVWA（一）密码爆破登录" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/06/24/DVWA（一）密码爆破登录/" class="article-date">
-  <time datetime="2019-06-24T04:00:00.000Z" itemprop="datePublished">2019-06-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/24/DVWA（一）密码爆破登录/">DVWA（一）密码爆破登录</a>
-    </h1>
+    <a href="/2019/06/24/DVWA（一）密码爆破登录/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">DVWA（一）密码爆破登录</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>工具： <code>Burpsuite</code> <code>wireshark</code> <code>Hydra</code></p>
-<h3 id="分析首页登录过程"><a href="#分析首页登录过程" class="headerlink" title="分析首页登录过程"></a>分析首页登录过程</h3><p><img src="assets/1553608887062.png" alt="1553608887062"></p>
-<p>首页的登录界面是一个标准的表单提交过程，提交的方法是 <strong>POST</strong>。但是分析网页结构可以发现，它包含一个隐藏的 <code>input</code>元素，如下图所示。</p>
-<p><img src="/home/john/Documents/web/assets/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B.md" alt="1553608830129"></p>
-<h4 id="发起点击行为"><a href="#发起点击行为" class="headerlink" title="发起点击行为"></a>发起点击行为</h4><p>随便输入用户密码后，点击提交。主要的交互过程如下：</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Request（POST）：</span></span><br><span class="line">    Login	Login</span><br><span class="line">    password	test</span><br><span class="line">    user_token	2c8e253430ec4771e4d1cee142ea87d1</span><br><span class="line">    username	test</span><br><span class="line">    </span><br><span class="line">Response （302 FOUND） ：</span><br><span class="line">	<span class="attribute">Location</span>: login.php</span><br><span class="line">	<span class="attribute">null</span></span><br></pre></td></tr></table></figure>
-
-<p>在每一次提交过程中，我们可以发现。<code>POST</code>的 <code>user_token</code>每次都发生改变。</p>
-<p>因此在进行爆破攻击时首先要分析页面获取到user_token的值，然后再进行提交。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 这是使用nodejs写的代码。运行需要一定的依赖包.</span><br><span class="line">words.map (<span class="function"><span class="params">word</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> user_token = $(<span class="string">"input.hidden"</span>).value</span><br><span class="line">    <span class="keyword">let</span> payload = &#123;<span class="attr">admin</span>: word.username, <span class="attr">password</span>: word.password, user.token=user_token&#125;</span><br><span class="line">    <span class="keyword">let</span> response = <span class="keyword">async</span> Request.get(payload)</span><br><span class="line">    <span class="keyword">if</span>(reponse.content.noinclude(<span class="string">'form'</span>))&#123;</span><br><span class="line">        <span class="keyword">return</span> word</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">    	<span class="keyword">this</span>.ctx = response</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="无user-token暴力突破"><a href="#无user-token暴力突破" class="headerlink" title="无user_token暴力突破"></a>无<code>user_token</code>暴力突破</h3><h4 id="采用burpsuite进行突破"><a href="#采用burpsuite进行突破" class="headerlink" title="采用burpsuite进行突破"></a>采用burpsuite进行突破</h4><p>在配置好代理和SSL证书以后，将登录页面<code>vulnerabilities/brute/</code>加入到 <code>Intruder</code>中。</p>
-<p>设置好爆破字典payloads。</p>
-<p>直接使用<code>burpsuite</code>进行遍历。（使用较为简单，参考帮助文档即可）</p>
-<h4 id="使用hydra进行突破"><a href="#使用hydra进行突破" class="headerlink" title="使用hydra进行突破"></a>使用hydra进行突破</h4><p>hydra的密码测试速度极快。但是需要确保：</p>
-<ol>
-<li>登录时携带cookie</li>
-<li>设置cookie时第一个字母会被忽略</li>
-</ol>
-<p><img src="assets/1553782149835.png" alt="1553782149835"></p>
-<p>命令如图所思， hydra携带参数默认以冒号进行分割。值得注意的是 <code>Cookie</code>的设置。</p>
-<p>在我大量分析包的时候发现，hydra在  <code>opensuse</code>环境下，会将 <code>cookie</code>的第一个字母进行忽略。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/DVWA（一）密码爆破登录/" data-id="cjylayof40000ubsa0m5jjw59" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         
